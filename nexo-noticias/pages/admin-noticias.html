@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Gestión de noticias | Nexo Noticias</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/pages/site-pages.css">
+</head>
+<body data-page="admin" data-navbar="admin">
+    <header id="app-header"></header>
+
+    <main id="admin-news-page" class="page-shell">
+        <div class="page-container">
+            <nav class="page-breadcrumb" aria-label="Ruta de navegación">
+                <a href="index.html">Inicio</a><span>›</span><span>Administración</span><span>›</span><span>Gestión de noticias</span>
+            </nav>
+
+            <div class="admin-heading-row">
+                <header class="page-heading">
+                    <span class="page-kicker"></span>
+                    <h1>⌕ Gestión de noticias</h1>
+                    <p>Busca, consulta, edita o elimina las noticias publicadas.</p>
+                </header>
+                <a href="pages/crear-noticia.html" class="page-primary-button">＋ Crear noticia</a>
+            </div>
+
+            <section class="admin-filter-card">
+                <h2>Filtros de búsqueda</h2>
+                <div class="admin-filter-grid">
+                    <div class="admin-field">
+                        <label for="admin-search-text">Título o palabra clave</label>
+                        <input id="admin-search-text" class="admin-control" type="search" placeholder="Ej. economía, tecnología, salud...">
+                    </div>
+                    <div class="admin-field">
+                        <label for="admin-search-category">Categoría</label>
+                        <select id="admin-search-category" class="admin-control">
+                            <option value="">Todas</option>
+                            <option>Educación</option>
+                            <option>Tecnología</option>
+                            <option>Turismo</option>
+                            <option>Comercio</option>
+                        </select>
+                    </div>
+                    <div class="admin-field">
+                        <label for="admin-search-from">Fecha desde</label>
+                        <input id="admin-search-from" class="admin-control" type="date">
+                    </div>
+                    <div class="admin-field">
+                        <label for="admin-search-to">Fecha hasta</label>
+                        <input id="admin-search-to" class="admin-control" type="date">
+                    </div>
+                    <button id="btn-admin-search" class="page-primary-button" type="button">⌕ Buscar</button>
+                    <button id="btn-admin-clear" class="page-secondary-button" type="button">↻ Limpiar</button>
+                </div>
+            </section>
+
+            <section class="admin-results-card">
+                <div class="admin-results-toolbar">
+                    <strong id="admin-results-count">Resultados (0 noticias)</strong>
+                    <label class="admin-sort-wrap">Ordenar por:
+                        <select id="admin-sort" class="admin-control">
+                            <option value="recientes">Más recientes</option>
+                            <option value="antiguas">Más antiguas</option>
+                            <option value="titulo">Título</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th><input id="admin-select-all" type="checkbox" aria-label="Seleccionar todas"></th>
+                                <th>Imagen</th>
+                                <th>Título</th>
+                                <th>Categoría</th>
+                                <th>Fecha de publicación</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-news-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="admin-pagination">
+                    <div class="admin-bulk-actions">
+                        <select id="admin-bulk-action" class="admin-control" aria-label="Acciones en lote">
+                            <option value="">Seleccionar acción</option>
+                            <option value="eliminar">Eliminar seleccionadas</option>
+                        </select>
+                        <button id="admin-bulk-apply" class="page-secondary-button" type="button">Aplicar</button>
+                    </div>
+                    <div id="admin-pagination-pages" class="admin-pagination__pages" aria-label="Paginación"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="app-footer" class="site-footer"></footer>
+
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/models/noticia.model.js"></script>
+    <script src="assets/js/services/session.service.js"></script>
+    <script src="assets/js/services/favoritos.service.js"></script>
+    <script src="assets/js/services/noticias.service.js"></script>
+    <script src="assets/js/services/notificaciones.service.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/footer.js"></script>
+    <script src="assets/js/controllers/navbar.controller.js"></script>
+    <script src="assets/js/controllers/footer.controller.js"></script>
+    <script src="assets/js/controllers/admin.controller.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

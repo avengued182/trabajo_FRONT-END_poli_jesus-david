@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo Noticias</title>
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Estilos del navbar -->
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+
+    <!-- Estilos del formulario de inicio de sesión -->
+    <link
+        rel="stylesheet"
+        href="assets/css/components/login-modal.css"
+    >
+    <!-- Estilos del formulario de registro -->
+    <link
+        rel="stylesheet"
+        href="assets/css/components/register-modal.css"
+    >
+
+    <!-- Estilos del Footer global -->
+    <link
+        rel="stylesheet"
+        href="assets/css/components/footer.css"
+    >
+
+        <!-- Estilos exclusivos del Home -->
+    <link
+        rel="stylesheet"
+        href="assets/css/pages/home.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/angular-promo/styles.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- Aquí se insertará el navbar dinámicamente -->
+    <header id="app-header"></header>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <main class="home">
+
+
+        <!-- ======================================
+             HERO
+        ======================================= -->
+
+        <section class="home-hero">
+
+
+            <div class="home-hero__container">
+
+
+                <!-- ==============================
+                     COLUMNA IZQUIERDA
+                =============================== -->
+
+                <div class="home-hero__content">
+
+
+                    <!-- TÍTULO -->
+
+                    <h1 class="home-hero__title">
+
+                        <span class="home-hero__title-main">
+                            Tu fuente confiable
+                        </span>
+
+                        <span
+                            class="
+                                home-hero__title-highlight
+                            "
+                        >
+                            de noticias
+                        </span>
+
+                    </h1>
+
+
+                    <!-- DESCRIPCIÓN -->
+
+                    <p class="home-hero__description">
+
+                        Mantente informado con las últimas
+                        noticias de México y el mundo.
+                        Análisis, contexto y las historias
+                        que realmente importan, en un solo lugar.
+
+                    </p>
+
+
+                    <!-- BOTONES -->
+
+                    <div class="home-hero__actions">
+
+
+                        <!-- EXPLORAR NOTICIAS -->
+
+                        <a
+                            href="#noticias-destacadas"
+                            class="
+                                home-hero__button
+                                home-hero__button--primary
+                            "
+                        >
+
+                            Explorar noticias
+
+
+                            <!-- Flecha SVG -->
+
+                            <span
+                                class="
+                                    home-hero__button-arrow
+                                "
+                                aria-hidden="true"
+                            >
+
+                                <svg viewBox="0 0 24 24">
+
+                                    <path
+                                        d="
+                                        M5 12H19
+
+                                        M14 7
+                                        L19 12
+                                        L14 17
+                                        "
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+
+                                </svg>
+
+                            </span>
+
+                        </a>
+
+
+                        <!-- CONTACTO -->
+
+                        <a
+                            href="pages/contacto.html"
+                            class="
+                                home-hero__button
+                                home-hero__button--secondary
+                            "
+                        >
+                            Contáctanos
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
+        <!-- ======================================
+             NOTICIAS DESTACADAS
+        ======================================= -->
+
+        <section
+            id="noticias-destacadas"
+            class="featured-news"
+        >
+
+            <div class="featured-news__container">
+
+
+                <!-- ==================================
+                     ENCABEZADO
+                =================================== -->
+
+                <div class="featured-news__header">
+
+
+                    <div>
+
+                        <!-- Línea decorativa -->
+
+                        <span
+                            class="featured-news__line"
+                            aria-hidden="true"
+                        >
+                        </span>
+
+
+                        <!-- Título -->
+
+                        <h2 class="featured-news__title">
+                            Noticias destacadas
+                        </h2>
+
+                    </div>
+
+
+                    <!-- Ver todas -->
+
+                    <a
+                        href="pages/noticias.html"
+                        class="featured-news__all"
+                    >
+
+                        Ver todas
+
+                        <span aria-hidden="true">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path
+                                    d="
+                                    M5 12H19
+                                    M14 7L19 12L14 17
+                                    "
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- ==================================
+                     TARJETAS
+                =================================== -->
+
+                <div
+                    id="featured-news-grid"
+                    class="featured-news__grid"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================================
+                         MÓDULO PROMOCIONAL ANGULAR
+        ======================================= -->
+
+        <section class="angular-promo-section">
+
+            <app-root></app-root>
+
+        </section>
+
+        
+        <!-- ======================================
+             ¿POR QUÉ ELEGIR NEXO NOTICIAS?
+        ======================================= -->
+
+        <section class="why-nexo">
+
+            <div class="why-nexo__container">
+
+
+                <!-- ==================================
+                     CONTENIDO IZQUIERDO
+                =================================== -->
+
+                <div class="why-nexo__content">
+
+                    
+
+
+                    <!-- TÍTULO -->
+
+                    <h2 class="why-nexo__title">
+
+                        ¿Por qué elegir
+
+                        <span class="why-nexo__title-highlight">
+                            Nexo Noticias?
+                        </span>
+
+                    </h2>
+
+
+                    <!-- DESCRIPCIÓN -->
+
+                    <p class="why-nexo__description">
+
+                        Información verificada, análisis profundo
+                        y las historias que realmente importan,
+                        todo en un solo lugar.
+
+                    </p>
+
+
+                    <!-- ==================================
+                         BENEFICIOS
+                    =================================== -->
+
+                    <div class="why-nexo__features">
+
+
+                        <!-- BENEFICIO 1 -->
+
+                        <article class="why-nexo__feature">
+
+
+                            <!-- Icono -->
+
+                            <div class="why-nexo__icon">
+
+                                <svg viewBox="0 0 24 24">
+
+                                    <path
+                                        d="
+                                        M12 3
+                                        L19 6
+                                        V11
+                                        C19 16
+                                        15.5 19
+                                        12 21
+                                        C8.5 19
+                                        5 16
+                                        5 11
+                                        V6
+                                        Z
+                                        "
+                                        fill="currentColor"
+                                    />
+
+                                    <path
+                                        d="
+                                        M9 12
+                                        L11 14
+                                        L15 9
+                                        "
+                                        fill="none"
+                                        stroke="#ffffff"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <h3 class="why-nexo__feature-title">
+                                Información confiable
+                            </h3>
+
+
+                            <p class="why-nexo__feature-text">
+                                Verificamos cada noticia con fuentes oficiales
+                                y expertos en el tema.
+                            </p>
+
+                        </article>
+
+
+                        <!-- BENEFICIO 2 -->
+
+                        <article class="why-nexo__feature">
+
+
+                            <div class="why-nexo__icon">
+
+                                <svg viewBox="0 0 24 24">
+
+                                    <circle
+                                        cx="12"
+                                        cy="8"
+                                        r="3"
+                                        fill="currentColor"
+                                    />
+
+                                    <circle
+                                        cx="5.5"
+                                        cy="10"
+                                        r="2.3"
+                                        fill="currentColor"
+                                    />
+
+                                    <circle
+                                        cx="18.5"
+                                        cy="10"
+                                        r="2.3"
+                                        fill="currentColor"
+                                    />
+
+                                    <path
+                                        d="
+                                        M6 19
+                                        C6 15.5
+                                        8.5 13.5
+                                        12 13.5
+                                        C15.5 13.5
+                                        18 15.5
+                                        18 19
+                                        "
+                                        fill="currentColor"
+                                    />
+
+                                    <path
+                                        d="
+                                        M1.5 18
+                                        C1.5 15.5
+                                        3 14
+                                        5.5 14
+                                        "
+                                        fill="currentColor"
+                                    />
+
+                                    <path
+                                        d="
+                                        M22.5 18
+                                        C22.5 15.5
+                                        21 14
+                                        18.5 14
+                                        "
+                                        fill="currentColor"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <h3 class="why-nexo__feature-title">
+                                Cobertura global
+                            </h3>
+
+
+                            <p class="why-nexo__feature-text">
+                                Te mantenemos informado sobre lo más relevante
+                                en México y el mundo.
+                            </p>
+
+                        </article>
+
+
+                        <!-- BENEFICIO 3 -->
+
+                        <article class="why-nexo__feature">
+
+
+                            <div class="why-nexo__icon">
+
+                                <svg viewBox="0 0 24 24">
+
+                                    <rect
+                                        x="4"
+                                        y="13"
+                                        width="3"
+                                        height="7"
+                                        rx="1"
+                                        fill="currentColor"
+                                    />
+
+                                    <rect
+                                        x="10.5"
+                                        y="9"
+                                        width="3"
+                                        height="11"
+                                        rx="1"
+                                        fill="currentColor"
+                                    />
+
+                                    <rect
+                                        x="17"
+                                        y="4"
+                                        width="3"
+                                        height="16"
+                                        rx="1"
+                                        fill="currentColor"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <h3 class="why-nexo__feature-title">
+                                Análisis experto
+                            </h3>
+
+
+                            <p class="why-nexo__feature-text">
+                                Contexto y perspectiva de especialistas para
+                                entender el panorama completo.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- ==================================
+                         BOTÓN CONTACTO
+                    =================================== -->
+
+                    <a
+                        href="pages/categorias.html"
+                        class="why-nexo__button"
+                    >
+
+                        Conocer más
+
+                        <span aria-hidden="true">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path
+                                    d="
+                                    M5 12H19
+                                    M14 7L19 12L14 17
+                                    "
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        
+        <!-- ======================================
+             NEWSLETTER / SUSCRIPCIÓN
+        ======================================= -->
+
+        <section class="newsletter">
+
+            <div class="newsletter__container">
+
+
+                <!-- ==================================
+                     INFORMACIÓN IZQUIERDA
+                =================================== -->
+
+                <div class="newsletter__info">
+
+
+                    <!-- ICONO DE CORREO -->
+
+                    <div
+                        class="newsletter__icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg viewBox="0 0 24 24">
+
+                            <path
+                                d="
+                                M3 5
+                                H21
+                                V19
+                                H3
+                                Z
+                                "
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="
+                                M3 6
+                                L12 13
+                                L21 6
+                                "
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <!-- TEXTO -->
+
+                    <div class="newsletter__text">
+
+                        <h2 class="newsletter__title">
+                            Recibe las noticias más importantes
+                        </h2>
+
+                        <p class="newsletter__description">
+                            Suscríbete a nuestro boletín y mantente siempre informado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================
+                     FORMULARIO DERECHA
+                =================================== -->
+
+                <form
+                    id="newsletter-form"
+                    class="newsletter__form"
+                >
+
+                    <input
+                        id="newsletter-email"
+                        class="newsletter__input"
+                        type="email"
+                        name="email"
+                        placeholder="Tu correo electrónico"
+                        aria-label="Tu correo electrónico"
+                        autocomplete="email"
+                        required
+                    >
+
+
+                    <button
+                        class="newsletter__button"
+                        type="submit"
+                    >
+
+                        Suscribirme
+
+
+                        <!-- Flecha -->
+
+                        <span
+                            class="newsletter__button-arrow"
+                            aria-hidden="true"
+                        >
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path
+                                    d="
+                                    M5 12H19
+                                    M14 7L19 12L14 17
+                                    "
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+        
+
+    </main>
+
+    
+    <!-- ==========================================
+         FOOTER GLOBAL
+    =========================================== -->
+
+    <footer
+        id="app-footer"
+        class="site-footer"
+    >
+    </footer>
+
+
+
+    <!-- Librería jQuery -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+
+    <!-- ===============================
+         COMPONENTES
+    ================================ -->
+
+    <script
+        src="assets/js/components/navbar.js">
+    </script>
+
+    <script
+        src="assets/js/components/login-modal.js">
+    </script>
+    <script
+        src="assets/js/components/register-modal.js">
+    </script>
+    <script
+        src="assets/js/components/footer.js">
+    </script>
+    <!-- ==========================================
+     MODELOS
+    =========================================== -->
+
+    <script
+        src="assets/js/models/noticia.model.js">
+    </script>
+
+    <!-- ===============================
+     SERVICIOS
+    ================================ -->
+
+    <script
+        src="assets/js/services/session.service.js">
+    </script>
+    <script
+        src="assets/js/services/noticias.service.js">
+    </script>
+    <script
+        src="assets/js/services/favoritos.service.js">
+    </script>
+    <script
+        src="assets/js/services/notificaciones.service.js">
+    </script>       
+
+
+    <!-- ===============================
+         CONTROLADORES
+    ================================ -->
+
+    <script
+        src="assets/js/controllers/navbar.controller.js">
+    </script>
+
+    <script
+        src="assets/js/controllers/login.controller.js">
+    </script>
+
+    <script
+        src="assets/js/controllers/register.controller.js">
+    </script>
+    <script
+        src="assets/js/controllers/footer.controller.js">
+    </script>
+    <script
+        src="assets/js/controllers/home.controller.js">
+    </script>
+    <script src="assets/js/controllers/newsletter.controller.js"></script>
+
+
+    <!-- ===============================
+         APLICACIÓN
+    ================================ -->
+
+    <script
+        src="assets/js/app.js">
+    </script>
+    <script
+        type="module"
+        src="assets/angular-promo/main.js"
+    ></script>
+
+</body>
+
+</html>

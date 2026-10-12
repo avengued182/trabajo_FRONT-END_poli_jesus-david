@@ -1,0 +1,446 @@
+/*
+==================================================
+SECCIÓN PROMOCIONAL - NEXO NOTICIAS
+==================================================
+*/
+
+.promo {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 42%)
+        1fr;
+
+    width:
+        min(
+            1180px,
+            calc(100% - 48px)
+        );
+
+    margin:
+        50px auto;
+
+    overflow: hidden;
+
+    background:
+        #f3fbfd;
+
+    border:
+        1px solid #d8eef2;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(5, 58, 88, 0.10);
+
+}
+
+
+/*
+==================================================
+IMAGEN
+==================================================
+*/
+
+.promo__image-container {
+
+    min-height:
+        330px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.promo__image {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        330px;
+
+    object-fit:
+        cover;
+
+}
+
+
+/*
+==================================================
+CONTENIDO
+==================================================
+*/
+
+.promo__content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        flex-start;
+
+    padding:
+        48px;
+
+}
+
+
+.promo__label {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        7px 13px;
+
+    background:
+        #dff8fb;
+
+    color:
+        #05899b;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.06em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*
+==================================================
+TÍTULO
+==================================================
+*/
+
+.promo__title {
+
+    margin:
+        0 0 16px;
+
+    color:
+        #073d61;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.7rem
+        );
+
+    line-height:
+        1.08;
+
+}
+
+
+/*
+==================================================
+DESCRIPCIÓN
+==================================================
+*/
+
+.promo__description {
+
+    max-width:
+        570px;
+
+    margin:
+        0 0 26px;
+
+    color:
+        #536875;
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/*
+==================================================
+BOTÓN PRINCIPAL
+==================================================
+*/
+
+.promo__button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        13px 24px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        #12bfd0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.promo__button:hover {
+
+    background:
+        #0da7b8;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 9px 20px
+        rgba(18, 191, 208, 0.25);
+
+}
+
+
+/*
+==================================================
+MENSAJE
+==================================================
+*/
+
+.promo__message {
+
+    margin:
+        18px 0 0;
+
+    padding:
+        11px 15px;
+
+    background:
+        #e3f8ef;
+
+    color:
+        #207451;
+
+    border-radius:
+        8px;
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/*
+==================================================
+BOTÓN CERRAR
+==================================================
+*/
+
+.promo__close {
+
+    position:
+        absolute;
+
+    top:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        10;
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    border:
+        1px solid
+        rgba(7, 61, 97, 0.12);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    color:
+        #073d61;
+
+    font-size:
+        1.4rem;
+
+    line-height:
+        1;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.promo__close:hover {
+
+    background:
+        #ffffff;
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (
+    max-width: 800px
+) {
+
+    .promo {
+
+        grid-template-columns:
+            1fr;
+
+        width:
+            min(
+                94%,
+                600px
+            );
+
+    }
+
+
+    .promo__image-container {
+
+        min-height:
+            240px;
+
+    }
+
+
+    .promo__image {
+
+        min-height:
+            240px;
+
+        max-height:
+            300px;
+
+    }
+
+
+    .promo__content {
+
+        padding:
+            32px 26px;
+
+    }
+
+}
+
+
+@media (
+    max-width: 480px
+) {
+
+    .promo {
+
+        margin:
+            30px auto;
+
+        border-radius:
+            15px;
+
+    }
+
+
+    .promo__content {
+
+        padding:
+            28px 20px;
+
+    }
+
+
+    .promo__title {
+
+        font-size:
+            1.7rem;
+
+    }
+
+}

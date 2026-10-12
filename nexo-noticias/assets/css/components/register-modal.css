@@ -1,0 +1,476 @@
+/*
+==================================================
+NEXO NOTICIAS
+Archivo: register-modal.css
+==================================================
+
+Formulario flotante de registro.
+
+Mantiene la misma identidad visual
+del formulario de inicio de sesión.
+==================================================
+*/
+
+
+/*
+==================================================
+VENTANA PRINCIPAL
+==================================================
+*/
+
+.register-modal {
+
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 20px);
+
+    right: 0;
+
+    width: min(
+        555px,
+        calc(100vw - 32px)
+    );
+
+    padding:
+        46px
+        42px
+        38px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #06385d 0%,
+            #012e4e 100%
+        );
+
+    border-radius: 16px;
+
+    border:
+        2px solid
+        rgba(42, 120, 159, 0.45);
+
+    box-shadow:
+        0 16px 38px
+        rgba(0, 35, 58, 0.28);
+
+    z-index: 1500;
+}
+
+
+/*
+==================================================
+MUESQUITA SUPERIOR
+==================================================
+*/
+
+.register-modal::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -13px;
+
+    right: 83px;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        13px solid transparent;
+
+    border-right:
+        13px solid transparent;
+
+    border-bottom:
+        13px solid #06385d;
+}
+
+
+/*
+==================================================
+BOTÓN CERRAR
+==================================================
+*/
+
+.register-modal__close {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #8da8b8;
+
+    font-size: 2.7rem;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.register-modal__close:hover {
+
+    color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+
+/*
+==================================================
+ENCABEZADO
+==================================================
+*/
+
+.register-modal__header {
+
+    margin-bottom: 24px;
+}
+
+
+.register-modal__title {
+
+    margin: 0 0 8px 0;
+
+    color: #ffffff;
+
+    font-size: 2.15rem;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+.register-modal__subtitle {
+
+    margin: 0;
+
+    color: #dbe7ee;
+
+    font-size: 1.13rem;
+
+    line-height: 1.45;
+}
+
+
+/*
+==================================================
+FORMULARIO
+==================================================
+*/
+
+.register-modal__form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 19px;
+}
+
+
+/*
+==================================================
+INPUT
+==================================================
+*/
+
+.register-modal__input-container {
+
+    width: 100%;
+
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color:
+        rgba(8, 58, 91, 0.92);
+
+    border:
+        1.5px solid
+        rgba(48, 135, 177, 0.75);
+
+    border-radius: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.register-modal__input-container:focus-within {
+
+    border-color: #19d5dc;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(25, 213, 220, 0.12);
+}
+
+
+/*
+==================================================
+ICONOS
+==================================================
+*/
+
+.register-modal__input-icon {
+
+    width: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.register-modal__input-icon svg {
+
+    width: 29px;
+
+    height: 29px;
+
+    fill: #ffffff;
+}
+
+
+/*
+==================================================
+CAMPO
+==================================================
+*/
+
+.register-modal__input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+        18px
+        15px
+        18px
+        0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 1.12rem;
+}
+
+
+.register-modal__input::placeholder {
+
+    color: #d4e1e8;
+
+    opacity: 1;
+}
+
+
+/*
+==================================================
+MENSAJES
+==================================================
+*/
+
+.register-modal__message {
+
+    display: none;
+
+    margin:
+        -7px
+        0
+        -5px;
+
+    padding: 0 5px;
+
+    color: #ffb8b8;
+
+    font-size: 0.93rem;
+}
+
+
+/*
+==================================================
+BOTÓN REGISTRARSE
+==================================================
+*/
+
+.register-modal__submit {
+
+    width: 100%;
+
+    min-height: 62px;
+
+    margin-top: 2px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #13ccd1 0%,
+            #00c7ca 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 1.28rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.register-modal__submit:hover {
+
+    transform: translateY(-1px);
+
+    filter: brightness(1.05);
+}
+
+
+/*
+==================================================
+VOLVER AL LOGIN
+==================================================
+*/
+
+.register-modal__login {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+}
+
+
+.register-modal__login-link {
+
+    margin-left: 5px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #00d5d9;
+
+    font-size: inherit;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+
+    cursor: pointer;
+}
+
+
+.register-modal__login-link:hover {
+
+    color: #43eef0;
+}
+
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (max-width: 700px) {
+
+    .register-modal {
+
+        right: 50%;
+
+        transform: translateX(50%);
+
+        width:
+            calc(100vw - 30px);
+
+        padding:
+            40px
+            28px
+            32px;
+    }
+
+
+    .register-modal__title {
+
+        font-size: 1.75rem;
+    }
+
+
+    .register-modal__subtitle {
+
+        font-size: 1rem;
+    }
+
+
+    .register-modal__input-container {
+
+        min-height: 58px;
+    }
+
+
+    .register-modal__input {
+
+        font-size: 1rem;
+    }
+
+
+    .register-modal__submit {
+
+        min-height: 56px;
+
+        font-size: 1.13rem;
+    }
+
+
+    .register-modal::before {
+
+        right: 72px;
+    }
+
+}

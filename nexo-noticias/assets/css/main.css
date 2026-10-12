@@ -1,0 +1,52 @@
+/*
+==================================================
+NEXO NOTICIAS
+Archivo: main.css
+==================================================
+Estilos globales y variables de color.
+==================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Azul principal del navbar */
+    --color-azul-principal: #05385f;
+
+    /* Azul del dropdown */
+    --color-azul-dropdown: #05385f;
+
+    /* Azul ligeramente más oscuro para hover y detalles */
+    --color-azul-hover: #042f50;
+
+    /* Color de la última opción destacada */
+    --color-azul-destacado: #0a5577;
+
+    /* Turquesa de botones e indicadores */
+    --color-turquesa: #18d7df;
+
+    /* Blanco */
+    --color-blanco: #ffffff;
+
+    /* Fondo general */
+    --color-fondo: #eef1f5;
+
+    /* Texto oscuro */
+    --color-texto: #0b2e4f;
+
+    /* Bordes sutiles */
+    --color-borde-suave: rgba(255, 255, 255, 0.16);
+
+    /* Sombra */
+    --sombra-navbar: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Detalle de noticia | Nexo Noticias</title>
+
+
+    <!--
+    ==================================================
+    BASE DEL PROYECTO
+    ==================================================
+
+    Esta página está dentro de /pages.
+
+    Con esta etiqueta podemos seguir utilizando:
+
+    assets/...
+    data/...
+    index.html
+
+    como lo hacemos desde el Home.
+    -->
+
+    <base href="../">
+
+
+    <!-- ==========================================
+         ESTILOS GLOBALES
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/main.css"
+    >
+
+
+    <!-- Navbar -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/navbar.css"
+    >
+
+
+    <!-- Login -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/login-modal.css"
+    >
+
+
+    <!-- Registro -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/register-modal.css"
+    >
+
+
+    <!-- Footer -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/footer.css"
+    >
+
+
+    <!-- Detalle de noticia -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/pages/detalle-noticia.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         NAVBAR GLOBAL
+    =========================================== -->
+
+    <header id="app-header">
+    </header>
+
+
+    <!-- ==========================================
+         CONTENIDO
+    =========================================== -->
+
+    <main class="news-detail">
+
+
+        <!--
+        Aquí JavaScript insertará
+        la noticia correspondiente.
+        -->
+
+        <div
+            id="news-detail-container"
+            class="news-detail__container"
+        >
+        </div>
+
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER GLOBAL
+    =========================================== -->
+
+    <footer
+        id="app-footer"
+        class="site-footer"
+    >
+    </footer>
+
+
+    <!-- ==========================================
+         MODALES GLOBALES
+    =========================================== -->
+
+    <div id="login-modal-container">
+    </div>
+
+    <div id="register-modal-container">
+    </div>
+
+
+    <!-- ==========================================
+         JQUERY
+    =========================================== -->
+
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+
+    <!-- ==========================================
+         MODELOS
+    =========================================== -->
+
+    <script
+        src="assets/js/models/noticia.model.js">
+    </script>
+
+
+    <!-- ==========================================
+         SERVICIOS
+    =========================================== -->
+
+    <script
+        src="assets/js/services/session.service.js">
+    </script>
+
+    <script
+        src="assets/js/services/noticias.service.js">
+    </script>
+    <script
+        src="assets/js/services/favoritos.service.js">
+    </script>
+    <script
+        src="assets/js/services/notificaciones.service.js">
+    </script>
+
+
+    <!-- ==========================================
+         COMPONENTES
+    =========================================== -->
+
+    <script
+        src="assets/js/components/navbar.js">
+    </script>
+
+    <script
+        src="assets/js/components/login-modal.js">
+    </script>
+
+    <script
+        src="assets/js/components/register-modal.js">
+    </script>
+
+    <script
+        src="assets/js/components/footer.js">
+    </script>
+
+
+    <!-- ==========================================
+         CONTROLADORES
+    =========================================== -->
+
+    <script
+        src="assets/js/controllers/navbar.controller.js">
+    </script>
+
+    <script
+        src="assets/js/controllers/login.controller.js">
+    </script>
+
+    <script
+        src="assets/js/controllers/register.controller.js">
+    </script>
+
+    <script
+        src="assets/js/controllers/footer.controller.js">
+    </script>
+
+    <script
+        src="assets/js/controllers/detalle-noticia.controller.js">
+    </script>
+    <script src="assets/js/controllers/newsletter.controller.js"></script>
+
+
+    <!-- ==========================================
+         APLICACIÓN
+    =========================================== -->
+
+    <script
+        src="assets/js/app.js">
+    </script>
+
+
+</body>
+
+</html>

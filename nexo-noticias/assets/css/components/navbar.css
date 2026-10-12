@@ -1,0 +1,1085 @@
+/*
+==================================================
+NEXO NOTICIAS
+Archivo: navbar.css
+==================================================
+Estilos del navbar público.
+==================================================
+*/
+
+.navbar {
+    width: 100%;
+    min-height: 92px;
+    padding: 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-azul-principal);
+    box-shadow: var(--sombra-navbar);
+    position: relative;
+    z-index: 100;
+}
+
+/*
+==================================================
+LOGO
+==================================================
+*/
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.navbar__logo-image {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/*
+==================================================
+MENÚ PRINCIPAL
+==================================================
+*/
+
+.navbar__menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.navbar__item {
+    position: relative;
+}
+
+.navbar__link,
+.navbar__button {
+    border: none;
+    background: none;
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 1.18rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 35px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+/*
+Indicador de "Inicio" activo
+*/
+.navbar__link--active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 22px;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background-color: var(--color-turquesa);
+}
+
+/*
+==================================================
+FLECHA DE NOTICIAS
+==================================================
+*/
+
+.navbar__caret {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 6px;
+
+    color: var(--color-blanco);
+}
+
+
+.navbar__caret-icon {
+    width: 20px;
+    height: 20px;
+
+    display: block;
+}
+
+/*
+==================================================
+DROPDOWN
+==================================================
+*/
+
+.navbar__dropdown {
+    list-style: none;
+    position: absolute;
+    top: 82px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+
+    background: linear-gradient(
+        180deg,
+        #0a426b 0%,
+        #06385d 100%
+    );
+
+    border-radius: 14px;
+
+    display: none;
+
+    /*
+    Quitamos overflow:hidden para que el triángulo
+    superior pueda verse sin recortarse.
+    */
+    overflow: visible;
+
+    /*
+    Borde exterior más visible y más parecido
+    a la maqueta.
+    */
+    border: 2px solid rgba(255, 255, 255, 0.16);
+
+    /*
+    Pequeño borde interno para dar ese efecto
+    de contorno doble sutil.
+    */
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.22),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+    z-index: 999;
+}
+
+/*
+Pequeño triángulo superior
+*/
+.navbar__dropdown::before {
+    content: "";
+    position: absolute;
+
+    /*
+    La muesquita queda centrada arriba
+    del menú desplegable.
+    */
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #0a426b;
+
+    z-index: 2;
+}
+
+.navbar__dropdown--visible {
+    display: block;
+}
+
+/* El desplegable administrativo puede ser un poco más ancho. */
+.navbar__dropdown--management {
+    width: 240px;
+}
+
+/* Gira la flecha cuando cualquiera de los desplegables está abierto. */
+.navbar__caret {
+    transition: transform 0.2s ease;
+}
+
+.navbar__button[aria-expanded="true"] .navbar__caret {
+    transform: rotate(180deg);
+}
+
+.navbar__dropdown-item {
+    position: relative;
+}
+
+/*
+Líneas separadoras internas más cortas,
+centradas y más parecidas a la maqueta.
+*/
+.navbar__dropdown-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.navbar__dropdown-item a {
+    display: block;
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 1.12rem;
+    padding: 18px 22px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar__dropdown-item a:hover {
+    background-color: var(--color-azul-hover);
+}
+
+/*
+Última opción con bloque destacado
+como se parece a tu referencia
+*/
+.navbar__dropdown-item--destacado a {
+    background-color: #0b5579;
+    border-radius: 0 0 12px 12px;
+}
+/*
+==================================================
+CUENTA / LOGIN
+==================================================
+*/
+
+.navbar__account {
+    padding-left: 28px;
+    border-left: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+.navbar__login {
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: var(--color-turquesa);
+    color: var(--color-blanco);
+    font-size: 1.12rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 26px;
+    min-height: 54px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar__login:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.navbar__login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__login-svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--color-blanco);
+    display: block;
+}
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 0 22px;
+    }
+
+    .navbar__menu {
+        gap: 24px;
+    }
+
+    .navbar__link,
+    .navbar__button {
+        font-size: 1.08rem;
+    }
+
+    .navbar__login {
+        font-size: 1.03rem;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 16px 20px;
+        gap: 16px;
+    }
+
+    .navbar__logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar__logo-image {
+        height: 56px;
+    }
+
+    .navbar__menu {
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .navbar__account {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar__link,
+    .navbar__button {
+        font-size: 1rem;
+        padding: 18px 0;
+    }
+
+    .navbar__dropdown {
+        top: 56px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar__menu {
+        gap: 16px;
+    }
+
+    .navbar__link,
+    .navbar__button {
+        font-size: 0.98rem;
+    }
+
+    .navbar__login {
+        width: 100%;
+        justify-content: center;
+        max-width: 240px;
+    }
+
+    .navbar__logo-image {
+        height: 50px;
+    }
+}
+
+/*
+==================================================
+NAVBAR AUTENTICADO
+==================================================
+*/
+
+
+/*
+Contenedor de Mi cuenta.
+*/
+.navbar__account--authenticated {
+
+    position: relative;
+}
+
+
+/*
+==================================================
+BOTÓN MI CUENTA
+==================================================
+*/
+
+.navbar__account-button {
+
+    min-height: 68px;
+
+    padding:
+        14px
+        28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    /*
+    Conservamos el color turquesa
+    del diseño original.
+    */
+    background:
+        linear-gradient(
+            90deg,
+            #11cbd0 0%,
+            #10c8cc 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        filter 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.navbar__account-button:hover {
+
+    filter: brightness(1.05);
+
+    transform: translateY(-1px);
+}
+
+
+
+
+/*
+==================================================
+ICONO USUARIO
+==================================================
+*/
+
+.navbar__account-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.navbar__account-icon svg {
+
+    width: 24px;
+
+    height: 24px;
+
+    fill: #ffffff;
+}
+
+
+/*
+==================================================
+FLECHA
+==================================================
+*/
+
+.navbar__account-caret {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 3px;
+}
+
+
+.navbar__account-caret svg {
+
+    width: 19px;
+
+    height: 19px;
+}
+
+
+/*
+==================================================
+MENÚ MI CUENTA
+==================================================
+*/
+
+.navbar__account-menu {
+
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 15px);
+
+    right: 0;
+
+    width: 220px;
+
+    padding:
+        10px
+        0;
+
+    list-style: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #06385d,
+            #012e4e
+        );
+
+    border:
+        2px solid
+        rgba(42, 120, 159, 0.45);
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 14px 30px
+        rgba(0, 20, 40, 0.25);
+
+    z-index: 1500;
+}
+
+
+/*
+Muesquita superior.
+*/
+.navbar__account-menu::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+
+    right: 35px;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        10px solid transparent;
+
+    border-right:
+        10px solid transparent;
+
+    border-bottom:
+        10px solid #06385d;
+}
+
+
+/*
+Clase que jQuery agregará
+para mostrar el menú.
+*/
+.navbar__account-menu--visible {
+
+    display: block;
+}
+
+
+/*
+==================================================
+OPCIONES
+==================================================
+*/
+
+.navbar__account-menu li {
+
+    position: relative;
+}
+
+
+.navbar__account-menu button {
+
+    width: 100%;
+
+    padding:
+        18px
+        28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    font-size: 1.15rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+.navbar__account-menu-icon {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+}
+
+.navbar__account-menu-icon svg {
+
+    width: 28px;
+
+    height: 28px;
+
+    fill: currentColor;
+}
+
+
+.navbar__account-menu button:hover {
+
+    background-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/*
+Separador.
+*/
+.navbar__account-menu-separator {
+
+    height: 1px;
+
+    margin:
+        5px
+        18px;
+
+    background-color:
+        rgba(255, 255, 255, 0.17);
+}
+
+
+/*
+Cerrar sesión.
+*/
+.navbar__account-menu
+.navbar__account-logout {
+
+    color: #ffffff;
+}       
+
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (max-width: 900px) {
+
+    .navbar__account-button {
+
+        margin: 0 auto;
+    }
+
+
+    .navbar__account-menu {
+
+        right: 50%;
+
+        transform:
+            translateX(50%);
+    }
+
+}
+
+
+
+    /*
+==================================================
+NOTIFICACIONES DESPLEGABLES
+==================================================
+*/
+
+
+/*
+La sección de notificaciones ocupa
+todo el ancho del menú Mi cuenta.
+*/
+.navbar__notifications-section {
+
+    position: relative;
+}
+
+
+/*
+El texto ocupa el espacio disponible
+para que la flecha quede al lado derecho.
+*/
+.navbar__notifications-title {
+
+    flex: 1;
+
+    text-align: left;
+}
+
+
+/*
+==================================================
+FLECHA DE NOTIFICACIONES
+==================================================
+*/
+
+.navbar__notifications-caret {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.navbar__notifications-caret svg {
+
+    width: 19px;
+
+    height: 19px;
+}
+
+
+/*
+Cuando Notificaciones está abierto,
+giramos la flecha.
+*/
+.navbar__notifications-caret--open {
+
+    transform: rotate(180deg);
+}
+
+
+/*
+==================================================
+PANEL DESPLEGABLE
+==================================================
+*/
+
+.navbar__notifications-panel {
+
+    /*
+    Inicialmente permanece oculto.
+    */
+    display: none;
+
+    /*
+    Conservamos el mismo azul del menú.
+    */
+    background:
+        rgba(3, 48, 80, 0.65);
+}
+
+
+/*
+jQuery agregará esta clase
+cuando el usuario pulse Notificaciones.
+*/
+.navbar__notifications-panel--visible {
+
+    display: block;
+}
+
+
+/*
+==================================================
+LÍNEA SUPERIOR DEL DESPLEGABLE
+==================================================
+
+La línea permite distinguir claramente
+la opción Notificaciones de su contenido.
+*/
+
+.navbar__notifications-panel::before {
+
+    content: "";
+
+    display: block;
+
+    height: 1px;
+
+    margin:
+        0
+        18px;
+
+    background-color:
+        rgba(255, 255, 255, 0.17);
+}
+
+
+/*
+==================================================
+CADA NOTIFICACIÓN
+==================================================
+*/
+
+.navbar__notification {
+
+    position: relative;
+
+    min-height: 78px;
+
+    padding:
+        15px
+        16px
+        15px
+        20px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+
+/*
+==================================================
+LÍNEAS ENTRE NOTIFICACIONES
+==================================================
+
+La línea NO ocupa todo el ancho.
+
+Así conserva el mismo lenguaje visual
+del menú que ya aprobamos.
+*/
+
+.navbar__notification:not(:last-of-type)::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 0;
+
+    height: 1px;
+
+    background-color:
+        rgba(255, 255, 255, 0.14);
+}
+
+
+/*
+==================================================
+ICONO DE LA NOTIFICACIÓN
+==================================================
+*/
+
+.navbar__notification-icon {
+
+    width: 28px;
+
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+}
+
+
+.navbar__notification-icon svg {
+
+    width: 24px;
+
+    height: 24px;
+}
+
+
+/*
+==================================================
+CONTENIDO
+==================================================
+*/
+
+.navbar__notification-content {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.navbar__notification-text {
+
+    margin:
+        0
+        0
+        5px;
+
+    color: #ffffff;
+
+    font-size: 0.91rem;
+
+    line-height: 1.35;
+}
+
+
+.navbar__notification-time {
+
+    color: #9fb9c8;
+
+    font-size: 0.78rem;
+}
+
+
+/*
+==================================================
+BOTÓN ELIMINAR
+==================================================
+*/
+
+.navbar__notification-delete {
+
+    /*
+    Importante:
+    anulamos algunos estilos generales
+    del botón del menú.
+    */
+
+    width: 31px !important;
+
+    height: 31px;
+
+    padding: 0 !important;
+
+    flex-shrink: 0;
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent !important;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.navbar__notification-delete svg {
+
+    width: 20px;
+
+    height: 20px;
+}
+
+
+.navbar__notification-delete:hover {
+
+    background-color:
+        rgba(255, 255, 255, 0.10)
+        !important;
+
+    color: #ffffff;
+}
+
+
+/*
+==================================================
+SIN NOTIFICACIONES
+==================================================
+*/
+
+.navbar__notifications-empty {
+
+    display: none;
+
+    margin: 0;
+
+    padding:
+        22px
+        20px;
+
+    color: #c6d6df;
+
+    text-align: center;
+
+    font-size: 0.9rem;
+} 
+
+/*
+Línea debajo de Mi perfil.
+*/
+#btn-perfil::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+
+    right: 18px;
+
+    bottom: 0;
+
+    height: 1px;
+
+    background-color:
+        rgba(255, 255, 255, 0.17);
+}
+
+#btn-perfil {
+
+    position: relative;
+}  
+/* Ajustes para el menú ampliado de Noticias. */
+.navbar__dropdown {
+    width: 230px;
+}
+
+.navbar__dropdown-item a {
+    font-size: 1rem;
+    padding: 14px 20px;
+}

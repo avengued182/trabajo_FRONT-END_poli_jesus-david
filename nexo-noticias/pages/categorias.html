@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Categorías | Nexo Noticias</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/login-modal.css">
+    <link rel="stylesheet" href="assets/css/components/register-modal.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/pages/site-pages.css">
+</head>
+<body data-page="categorias">
+
+    <header id="app-header"></header>
+
+    <main id="categories-page" class="page-shell">
+        <div class="page-container">
+            <nav class="page-breadcrumb" aria-label="Ruta de navegación">
+                <a href="index.html">Inicio</a>
+                <span>›</span>
+                <a href="pages/noticias.html">Noticias</a>
+                <span>›</span>
+                <span>Categorías</span>
+            </nav>
+
+            <header class="page-heading">
+                <span class="page-kicker"></span>
+                <h1>Categorías de noticias</h1>
+                <p>
+                    Explora Nexo Noticias por temática y encuentra rápidamente el contenido que más te interesa.
+                </p>
+            </header>
+
+            <section class="category-overview-grid" aria-label="Categorías disponibles">
+                <button class="category-overview-card" data-categoria="educacion" type="button">
+                    <span class="category-overview-card__icon">🎓</span>
+                    <span class="category-overview-card__body">
+                        <strong>Educación</strong>
+                        <span>Aprendizaje, innovación educativa y nuevas herramientas.</span>
+                        <small data-category-count="educacion">0 noticias</small>
+                    </span>
+                    <span class="category-overview-card__arrow">→</span>
+                </button>
+
+                <button class="category-overview-card is-active" data-categoria="tecnologia" type="button">
+                    <span class="category-overview-card__icon">💻</span>
+                    <span class="category-overview-card__body">
+                        <strong>Tecnología</strong>
+                        <span>Innovación, dispositivos, inteligencia artificial y conectividad.</span>
+                        <small data-category-count="tecnologia">0 noticias</small>
+                    </span>
+                    <span class="category-overview-card__arrow">→</span>
+                </button>
+
+                <button class="category-overview-card" data-categoria="turismo" type="button">
+                    <span class="category-overview-card__icon">✈️</span>
+                    <span class="category-overview-card__body">
+                        <strong>Turismo</strong>
+                        <span>Destinos, cultura, naturaleza y experiencias de viaje.</span>
+                        <small data-category-count="turismo">0 noticias</small>
+                    </span>
+                    <span class="category-overview-card__arrow">→</span>
+                </button>
+
+                <button class="category-overview-card" data-categoria="comercio" type="button">
+                    <span class="category-overview-card__icon">🛒</span>
+                    <span class="category-overview-card__body">
+                        <strong>Comercio</strong>
+                        <span>Empresas, emprendimiento, sostenibilidad y economía digital.</span>
+                        <small data-category-count="comercio">0 noticias</small>
+                    </span>
+                    <span class="category-overview-card__arrow">→</span>
+                </button>
+            </section>
+
+            <section id="category-results" class="category-results-section">
+                <div class="category-results-heading">
+                    <div>
+                        <span class="page-kicker"></span>
+                        <h2 id="category-results-title">Noticias de Tecnología</h2>
+                        <p id="category-results-text">Consulta las publicaciones más recientes de tecnología.</p>
+                    </div>
+
+                    <a href="pages/noticias.html" class="page-secondary-button">
+                        Ver todas las noticias
+                    </a>
+                </div>
+
+                <div class="category-tabs">
+                    <button class="category-tab" data-categoria="educacion" type="button">Educación</button>
+                    <button class="category-tab is-active" data-categoria="tecnologia" type="button">Tecnología</button>
+                    <button class="category-tab" data-categoria="turismo" type="button">Turismo</button>
+                    <button class="category-tab" data-categoria="comercio" type="button">Comercio</button>
+                </div>
+
+                <div id="category-news-grid" class="news-list-grid" aria-live="polite"></div>
+
+                <div class="news-list-load">
+                    <button id="category-load-more" class="page-primary-button" type="button">
+                        ↻ Cargar más noticias
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="app-footer" class="site-footer"></footer>
+
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/models/noticia.model.js"></script>
+    <script src="assets/js/services/session.service.js"></script>
+    <script src="assets/js/services/noticias.service.js"></script>
+    <script src="assets/js/services/favoritos.service.js"></script>
+    <script src="assets/js/services/notificaciones.service.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/login-modal.js"></script>
+    <script src="assets/js/components/register-modal.js"></script>
+    <script src="assets/js/components/footer.js"></script>
+    <script src="assets/js/controllers/navbar.controller.js"></script>
+    <script src="assets/js/controllers/login.controller.js"></script>
+    <script src="assets/js/controllers/register.controller.js"></script>
+    <script src="assets/js/controllers/footer.controller.js"></script>
+    <script src="assets/js/controllers/noticias.controller.js"></script>
+    <script src="assets/js/controllers/categorias.controller.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

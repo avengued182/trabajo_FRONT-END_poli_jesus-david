@@ -1,0 +1,2245 @@
+    /*
+==================================================
+NEXO NOTICIAS
+Archivo: home.css
+==================================================
+
+RESPONSABILIDAD:
+
+Contener los estilos exclusivos
+de la página principal Home.
+
+Por ahora solamente se implementa
+la sección Hero.
+==================================================
+*/
+
+
+/*
+==================================================
+HOME
+==================================================
+*/
+
+.home {
+
+    width: 100%;
+
+    background-color: #ffffff;
+}
+
+
+/*
+==================================================
+HERO
+==================================================
+*/
+
+.home-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: #ffffff;
+
+    background-image:
+        url("../../images/home/hero-home.png");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        center center;
+
+    background-size:
+        cover;
+}
+
+
+/*
+==================================================
+CONTENEDOR
+==================================================
+
+Limita el ancho para que el contenido
+no quede pegado a los extremos de la pantalla.
+*/
+
+.home-hero__container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        1800px,
+        calc(100% - 120px)
+    );
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    align-items: center;
+
+    gap: 0;
+
+    padding:
+        65px
+        0
+        90px;
+}
+
+
+/*
+==================================================
+CONTENIDO IZQUIERDO
+==================================================
+*/
+
+.home-hero__content {
+
+    max-width: 560px;
+}
+
+
+/*
+==================================================
+TÍTULO
+==================================================
+*/
+
+.home-hero__title {
+
+    margin:
+        0
+        0
+        24px;
+
+    color: #06385d;
+
+    font-size:
+        clamp(
+            2.8rem,
+            5vw,
+            4.5rem
+        );
+
+    font-weight: 800;
+
+    line-height: 1.02;
+
+    letter-spacing:
+        -1.5px;
+}
+
+.home-hero__title-main {
+
+    display: block;
+
+    white-space: nowrap;
+}
+
+
+/*
+Parte turquesa del título.
+*/
+
+.home-hero__title-highlight {
+
+    display: block;
+
+    color: #08aebb;
+}
+
+
+/*
+==================================================
+DESCRIPCIÓN
+==================================================
+*/
+
+.home-hero__description {
+
+    max-width: 540px;
+
+    margin:
+        0
+        0
+        32px;
+
+    color: #49687d;
+
+    font-size: 1.16rem;
+
+    line-height: 1.55;
+}
+
+
+/*
+==================================================
+BOTONES
+==================================================
+*/
+
+.home-hero__actions {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+
+/*
+Estilo base compartido.
+*/
+
+.home-hero__button {
+
+    min-height: 54px;
+
+    padding:
+        0
+        28px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/*
+==================================================
+BOTÓN EXPLORAR NOTICIAS
+==================================================
+*/
+
+.home-hero__button--primary {
+
+    border:
+        2px solid #08bac4;
+
+    background:
+        linear-gradient(
+            90deg,
+            #10cbd0,
+            #00aebd
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(0, 174, 189, 0.18);
+}
+
+
+.home-hero__button--primary:hover {
+
+    filter: brightness(1.05);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/*
+Flecha.
+*/
+
+.home-hero__button-arrow {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.home-hero__button-arrow svg {
+
+    width: 20px;
+
+    height: 20px;
+}
+
+
+/*
+==================================================
+BOTÓN CONTACTO
+==================================================
+*/
+
+.home-hero__button--secondary {
+
+    border:
+        2px solid #08aebb;
+
+    background-color:
+        #ffffff;
+
+    color:
+        #06385d;
+}
+
+
+.home-hero__button--secondary:hover {
+
+    background-color:
+        #f1fbfc;
+
+    transform:
+        translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (max-width: 950px) {
+
+    .home-hero {
+
+        min-height: 500px;
+
+        background-position:
+            center center;
+
+        background-size:
+            cover;
+    }
+
+
+    .home-hero__container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 40px;
+
+        padding:
+            55px
+            0
+            70px;
+    }
+
+
+    .home-hero__content {
+
+        max-width: 680px;
+    }
+
+
+    .home-hero__visual {
+
+        min-height: 380px;
+    }
+
+
+    .home-hero__image {
+
+        max-width: 680px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+
+    .home-hero__container {
+
+        width:
+            calc(100% - 32px);
+
+        padding:
+            42px
+            0;
+    }
+
+
+    .home-hero__title {
+
+        font-size: 2.6rem;
+    }
+
+
+    .home-hero__description {
+
+        font-size: 1rem;
+    }
+
+
+    .home-hero__actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .home-hero__button {
+
+        width: 100%;
+    }
+
+
+    .home-hero__visual {
+
+        min-height: 280px;
+    }
+
+
+    .home-hero__image {
+
+        height: 280px;
+
+        border-radius: 20px;
+    }
+
+
+    .home-hero__visual::before {
+
+        width: 340px;
+
+        height: 280px;
+    }
+
+    .home-hero__title-main {
+
+        white-space: normal;
+    }
+
+    .home-hero {
+
+        min-height: 420px;
+
+        background-position:
+            68% center;
+
+        background-size:
+            cover;
+    }
+
+}
+
+/*
+==================================================
+NOTICIAS DESTACADAS
+==================================================
+*/
+
+.featured-news {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        55px
+        0
+        70px;
+
+    background-color:
+        #ffffff;
+}
+
+
+/*
+==================================================
+CONTENEDOR
+==================================================
+*/
+
+.featured-news__container {
+
+    width: min(
+        1800px,
+        calc(100% - 120px)
+    );
+
+    margin:
+        0 auto;
+}
+
+
+/*
+==================================================
+ENCABEZADO
+==================================================
+*/
+
+.featured-news__header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom:
+        28px;
+}
+
+
+/*
+==================================================
+LÍNEA TURQUESA
+==================================================
+*/
+
+.featured-news__line {
+
+    display: block;
+
+    width: 48px;
+
+    height: 5px;
+
+    margin-bottom:
+        17px;
+
+    border-radius:
+        8px;
+
+    background-color:
+        #13cbd0;
+}
+
+
+/*
+==================================================
+TÍTULO
+==================================================
+*/
+
+.featured-news__title {
+
+    margin: 0;
+
+    color:
+        #06385d;
+
+    font-size:
+        2.05rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.15;
+}
+
+
+/*
+==================================================
+VER TODAS
+==================================================
+*/
+
+.featured-news__all {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom:
+        5px;
+
+    color:
+        #00aeba;
+
+    text-decoration:
+        none;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        600;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.featured-news__all span {
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.featured-news__all svg {
+
+    width: 21px;
+
+    height: 21px;
+}
+
+
+.featured-news__all:hover {
+
+    color:
+        #078c9b;
+
+    transform:
+        translateX(2px);
+}
+
+
+/*
+==================================================
+GRID DE TARJETAS
+==================================================
+*/
+
+.featured-news__grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        28px;
+}
+
+
+/*
+==================================================
+TARJETA
+==================================================
+*/
+
+.featured-card {
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    background-color:
+        #ffffff;
+
+    border:
+        1px solid
+        #e2e9ed;
+
+    border-radius:
+        13px;
+
+    box-shadow:
+        0 7px 22px
+        rgba(3, 52, 81, 0.09);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.featured-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 28px
+        rgba(3, 52, 81, 0.14);
+}
+
+
+/*
+==================================================
+IMAGEN
+==================================================
+*/
+
+.featured-card__image-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 235px;
+
+    overflow: hidden;
+}
+
+
+.featured-card__image {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.featured-card:hover
+.featured-card__image {
+
+    transform:
+        scale(1.03);
+}
+
+
+/*
+==================================================
+CATEGORÍA
+==================================================
+*/
+
+.featured-card__category {
+
+    position: absolute;
+
+    left: 16px;
+
+    bottom: 13px;
+
+    padding:
+        6px
+        14px;
+
+    border-radius:
+        20px;
+
+    background-color:
+        #e7fbfc;
+
+    color:
+        #08788c;
+
+    font-size:
+        0.79rem;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 2px 7px
+        rgba(0, 40, 60, 0.08);
+}
+
+
+/*
+==================================================
+CONTENIDO DE LA TARJETA
+==================================================
+*/
+
+.featured-card__content {
+
+    flex: 1;
+
+    padding:
+        18px
+        18px
+        17px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/*
+==================================================
+TÍTULO DE NOTICIA
+==================================================
+*/
+
+.featured-card__title {
+
+    margin:
+        0
+        0
+        10px;
+
+    color:
+        #06385d;
+
+    font-size:
+        1.13rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.25;
+}
+
+
+/*
+==================================================
+DESCRIPCIÓN
+==================================================
+*/
+
+.featured-card__description {
+
+    flex: 1;
+
+    margin:
+        0
+        0
+        18px;
+
+    color:
+        #5c7384;
+
+    font-size:
+        0.94rem;
+
+    line-height:
+        1.42;
+}
+
+
+/*
+==================================================
+ACCIONES
+==================================================
+*/
+
+.featured-card__actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap:
+        14px;
+}
+
+
+/*
+==================================================
+VER MÁS
+==================================================
+*/
+
+.featured-card__more {
+
+    min-width:
+        145px;
+
+    min-height:
+        43px;
+
+    padding:
+        0
+        22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap:
+        10px;
+
+    border-radius:
+        8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #10cbd0,
+            #049eaf
+        );
+
+    color:
+        #ffffff;
+
+    text-decoration:
+        none;
+
+    font-size:
+        0.94rem;
+
+    font-weight:
+        600;
+
+    transition:
+        filter 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.featured-card__more span {
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.featured-card__more svg {
+
+    width: 19px;
+
+    height: 19px;
+}
+
+
+.featured-card__more:hover {
+
+    filter:
+        brightness(1.05);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/*
+==================================================
+CORAZÓN / FAVORITO
+==================================================
+*/
+
+.featured-card__favorite {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding: 0;
+
+    border:
+        1.5px solid
+        #cbdbe3;
+
+    border-radius:
+        10px;
+
+    background-color:
+        #ffffff;
+
+    color:
+        #06385d;
+
+    cursor:
+        pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.featured-card__favorite svg {
+
+    width:
+        23px;
+
+    height:
+        23px;
+}
+
+
+.featured-card__favorite:hover {
+
+    color:
+        #e93467;
+
+    border-color:
+        #e93467;
+
+    background-color:
+        #fff5f8;
+
+    transform:
+        scale(1.04);
+}
+
+/*
+==================================================
+FAVORITO ACTIVO
+==================================================
+
+Se aplica cuando la noticia
+ya está guardada en Favoritos.
+*/
+
+.featured-card__favorite.is-favorite {
+
+    color:
+        #e93467;
+
+    border-color:
+        #e93467;
+
+    background-color:
+        #fff5f8;
+}
+
+
+.featured-card__favorite.is-favorite svg path {
+
+    fill:
+        currentColor;
+
+    stroke:
+        currentColor;
+}
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (max-width: 950px) {
+
+    .featured-news__container {
+
+        width:
+            calc(100% - 48px);
+    }
+
+
+    .featured-news__grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .featured-news {
+
+        padding:
+            42px
+            0
+            55px;
+    }
+
+
+    .featured-news__container {
+
+        width:
+            calc(100% - 32px);
+    }
+
+
+    .featured-news__header {
+
+        align-items:
+            center;
+    }
+
+
+    .featured-news__title {
+
+        font-size:
+            1.65rem;
+    }
+
+
+    .featured-news__grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .featured-card__image-container {
+
+        height:
+            220px;
+    }
+
+}
+
+/*
+==================================================
+¿POR QUÉ ELEGIR NEXO NOTICIAS?
+==================================================
+*/
+
+.why-nexo {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 610px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+
+    /*
+    Imagen de fondo creada específicamente
+    para esta sección.
+    */
+
+    background-image:
+        url("../../images/home/why-nexo-bg.png");
+
+    background-repeat:
+        no-repeat;
+
+    background-position:
+        center center;
+
+    background-size:
+        cover;
+}
+
+
+/*
+==================================================
+CONTENEDOR
+==================================================
+*/
+
+.why-nexo__container {
+
+    width: min(
+        1800px,
+        calc(100% - 120px)
+    );
+
+    margin:
+        0 auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/*
+==================================================
+CONTENIDO IZQUIERDO
+==================================================
+*/
+
+.why-nexo__content {
+
+    /*
+    Ocupamos una zona más ancha del lado izquierdo
+    para colocar texto e iconos horizontalmente.
+    */
+    width: 1050px;
+
+    max-width: 68%;
+
+    padding:
+        65px
+        0;
+
+
+    /*
+    Distribución del diseño original:
+    
+    columna izquierda:
+    título + descripción + botón
+
+    columna derecha:
+    tres beneficios
+    */
+    display: grid;
+
+    grid-template-columns:
+        340px
+        1fr;
+
+    grid-template-areas:
+        "title features"
+        "description features"
+        "button features";
+
+    column-gap: 55px;
+
+    align-items: center;
+}
+
+
+/*
+==================================================
+TÍTULO
+==================================================
+*/
+
+.why-nexo__title {
+
+    margin:
+        0
+        0
+        16px;
+
+    color:
+        #06385d;
+
+    font-size:
+        2.5rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.05;
+    grid-area: title;
+}
+
+
+.why-nexo__title-highlight {
+
+    display: block;
+
+    color:
+        #08aebb;
+}
+
+
+/*
+==================================================
+DESCRIPCIÓN
+==================================================
+*/
+
+.why-nexo__description {
+
+    grid-area: description;
+
+    max-width: 600px;
+
+    margin:
+        0
+        0
+        28px;
+
+    color:
+        #4e6c81;
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.5;
+
+    text-align: left;
+}
+
+
+/*
+==================================================
+BENEFICIOS
+==================================================
+*/
+
+.why-nexo__features {
+
+    grid-area: features;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        32px;
+
+    margin-bottom: 0;
+
+    align-items: start;
+
+    justify-items: center;
+}
+
+
+/*
+==================================================
+BENEFICIO INDIVIDUAL
+==================================================
+*/
+
+.why-nexo__feature {
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+
+/*
+==================================================
+ICONOS
+==================================================
+*/
+
+.why-nexo__icon {
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    margin:
+    0 auto 14px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background-color:
+        rgba(220, 246, 250, 0.95);
+
+    color:
+        #087e9c;
+}
+
+
+.why-nexo__icon svg {
+
+    width:
+        39px;
+
+    height:
+        39px;
+}
+
+
+/*
+==================================================
+TÍTULOS DE BENEFICIOS
+==================================================
+*/
+
+.why-nexo__feature-title {
+
+    margin:
+        0
+        0
+        10px;
+
+    color:
+        #06385d;
+
+    font-size:
+        1.06rem;
+
+    font-weight:
+        800;
+}
+
+
+/*
+==================================================
+DESCRIPCIÓN BENEFICIOS
+==================================================
+*/
+
+.why-nexo__feature-text {
+
+    margin: 0;
+
+    color:
+        #526f84;
+
+    font-size:
+        0.93rem;
+
+    line-height:
+        1.45;
+}
+
+
+/*
+==================================================
+BOTÓN CONTACTO
+==================================================
+*/
+
+.why-nexo__button {
+
+    grid-area: button;
+
+    justify-self: start;
+
+    min-width: 195px;
+
+    min-height: 51px;
+
+    padding:
+        0
+        24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    /*
+    Como en el mockup:
+    fondo blanco y borde turquesa.
+    */
+    border:
+        2px solid
+        #09b8c3;
+
+    border-radius: 9px;
+
+    background-color:
+        rgba(255, 255, 255, 0.92);
+
+    color:
+        #06385d;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.why-nexo__button span {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+}
+
+
+.why-nexo__button svg {
+
+    width:
+        21px;
+
+    height:
+        21px;
+}
+
+
+.why-nexo__button:hover {
+
+    background-color:
+        #eefbfc;
+
+    transform:
+        translateY(-1px);
+}
+
+.why-nexo__button span {
+
+    color: #09aebe;
+}
+
+
+/*
+==================================================
+RESPONSIVE TABLET
+==================================================
+*/
+
+@media (max-width: 1050px) {
+
+    .why-nexo {
+
+        background-position:
+            62% center;
+    }
+
+
+    .why-nexo__container {
+
+        width:
+            calc(100% - 48px);
+    }
+
+
+    .why-nexo__content {
+
+        width: 650px;
+
+        max-width: 62%;
+
+        display: block;
+    }
+
+
+    .why-nexo__features {
+
+        gap:
+            22px;
+    }
+
+}
+
+
+/*
+==================================================
+RESPONSIVE MÓVIL
+==================================================
+*/
+
+@media (max-width: 750px) {
+
+    .why-nexo {
+
+        min-height:
+            auto;
+
+        background-position:
+            35% center;
+    }
+
+
+    /*
+    Capa blanca ligera para asegurar
+    que el texto siga siendo legible.
+    */
+
+    .why-nexo::before {
+
+        content: "";
+
+        position:
+            absolute;
+
+        inset:
+            0;
+
+        background:
+            rgba(255, 255, 255, 0.84);
+
+        z-index:
+            1;
+    }
+
+
+    .why-nexo__container {
+
+        width:
+            calc(100% - 32px);
+    }
+
+
+    .why-nexo__content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding:
+            50px
+            0;
+
+        text-align: center;
+    }
+
+
+    .why-nexo__title {
+
+        font-size: 2rem;
+
+        text-align: center;
+    }
+
+
+    .why-nexo__features {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            28px;
+    }
+
+
+    .why-nexo__feature {
+
+        max-width: 360px;
+
+        text-align: center;
+
+        margin: 0 auto;
+    }
+
+    .why-nexo__button {
+
+        justify-self: center;
+
+        margin: 0 auto;
+    }
+
+}
+
+/*
+==================================================
+NEWSLETTER / SUSCRIPCIÓN
+==================================================
+*/
+
+.newsletter {
+
+    width: 100%;
+
+    padding:
+        22px
+        0
+        28px;
+
+    background-color:
+        #ffffff;
+}
+
+
+/*
+==================================================
+CONTENEDOR PRINCIPAL
+==================================================
+
+En escritorio mantiene:
+
+IZQUIERDA:
+icono + texto
+
+DERECHA:
+input + botón
+*/
+
+.newsletter__container {
+
+    width: min(
+        1800px,
+        calc(100% - 120px)
+    );
+
+    min-height: 112px;
+
+    margin:
+        0 auto;
+
+    padding:
+        18px
+        34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap:
+        45px;
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f3fbfd 0%,
+            #edf9fc 100%
+        );
+
+    border:
+        1px solid
+        rgba(195, 227, 237, 0.55);
+}
+
+
+/*
+==================================================
+BLOQUE IZQUIERDO
+==================================================
+*/
+
+.newsletter__info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        24px;
+
+    flex-shrink: 0;
+}
+
+
+/*
+==================================================
+ICONO
+==================================================
+*/
+
+.newsletter__icon {
+
+    width:
+        76px;
+
+    height:
+        76px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background-color:
+        #d9f3fa;
+
+    color:
+        #08799a;
+}
+
+
+.newsletter__icon svg {
+
+    width:
+        40px;
+
+    height:
+        40px;
+}
+
+
+/*
+==================================================
+TEXTO
+==================================================
+*/
+
+.newsletter__text {
+
+    min-width: 0;
+}
+
+
+.newsletter__title {
+
+    margin:
+        0
+        0
+        5px;
+
+    color:
+        #06385d;
+
+    font-size:
+        1.35rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.2;
+}
+
+
+.newsletter__description {
+
+    margin: 0;
+
+    color:
+        #496d86;
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.4;
+}
+
+
+/*
+==================================================
+FORMULARIO
+==================================================
+
+Esta es la parte importante:
+
+el formulario permanece al lado DERECHO
+del icono y del texto en escritorio.
+*/
+
+.newsletter__form {
+
+    width:
+        min(
+            680px,
+            48%
+        );
+
+    min-width:
+        430px;
+
+    display:
+        flex;
+
+    align-items:
+        stretch;
+
+    margin-left:
+        auto;
+}
+
+
+/*
+==================================================
+INPUT
+==================================================
+*/
+
+.newsletter__input {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    height:
+        56px;
+
+    padding:
+        0
+        24px;
+
+    border:
+        1.5px solid
+        #bfdbe8;
+
+    border-right:
+        none;
+
+    border-radius:
+        10px
+        0
+        0
+        10px;
+
+    outline:
+        none;
+
+    background-color:
+        #ffffff;
+
+    color:
+        #06385d;
+
+    font-size:
+        1rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.newsletter__input::placeholder {
+
+    color:
+        #8099aa;
+}
+
+
+.newsletter__input:focus {
+
+    border-color:
+        #0ebbc5;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(14, 187, 197, 0.12);
+}
+
+
+/*
+==================================================
+BOTÓN SUSCRIBIRME
+==================================================
+*/
+
+.newsletter__button {
+
+    min-width:
+        205px;
+
+    height:
+        56px;
+
+    padding:
+        0
+        26px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    border:
+        none;
+
+    border-radius:
+        0
+        10px
+        10px
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0db9c4,
+            #078eaa
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        filter 0.2s ease;
+}
+
+
+.newsletter__button:hover {
+
+    filter:
+        brightness(1.06);
+}
+
+
+/*
+==================================================
+FLECHA
+==================================================
+*/
+
+.newsletter__button-arrow {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+
+.newsletter__button-arrow svg {
+
+    width:
+        22px;
+
+    height:
+        22px;
+}
+
+
+/*
+==================================================
+TABLET
+==================================================
+*/
+
+@media (max-width: 1000px) {
+
+    .newsletter__container {
+
+        width:
+            calc(100% - 48px);
+
+        gap:
+            25px;
+    }
+
+
+    .newsletter__form {
+
+        width:
+            46%;
+
+        min-width:
+            370px;
+    }
+
+
+    .newsletter__info {
+
+        gap:
+            16px;
+    }
+
+
+    .newsletter__icon {
+
+        width:
+            65px;
+
+        height:
+            65px;
+    }
+
+
+    .newsletter__title {
+
+        font-size:
+            1.15rem;
+    }
+
+
+    .newsletter__description {
+
+        font-size:
+            0.9rem;
+    }
+
+}
+
+
+/*
+==================================================
+MÓVIL
+==================================================
+*/
+
+@media (max-width: 750px) {
+
+    .newsletter {
+
+        padding:
+            18px
+            0
+            25px;
+    }
+
+
+    .newsletter__container {
+
+        width:
+            calc(100% - 32px);
+
+        padding:
+            26px
+            20px;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            24px;
+
+        border-radius:
+            20px;
+    }
+
+
+    .newsletter__info {
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+    }
+
+
+    .newsletter__form {
+
+        width:
+            100%;
+
+        min-width:
+            0;
+
+        margin-left:
+            0;
+    }
+
+}
+
+
+/*
+==================================================
+MÓVIL PEQUEÑO
+==================================================
+*/
+
+@media (max-width: 500px) {
+
+    .newsletter__info {
+
+        flex-direction:
+            column;
+    }
+
+
+    .newsletter__form {
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+    }
+
+
+    .newsletter__input {
+
+        width:
+            100%;
+
+        border:
+            1.5px solid
+            #bfdbe8;
+
+        border-radius:
+            10px;
+    }
+
+
+    .newsletter__button {
+
+        width:
+            100%;
+
+        border-radius:
+            10px;
+    }
+
+}       

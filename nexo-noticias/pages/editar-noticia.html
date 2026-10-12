@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Editar noticia | Nexo Noticias</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/pages/site-pages.css">
+</head>
+<body data-page="admin" data-navbar="admin">
+    <header id="app-header"></header>
+
+    <main class="page-shell">
+        <div class="page-container">
+            <nav class="page-breadcrumb"><a href="index.html">Inicio</a><span>›</span><a href="pages/admin-noticias.html">Administración</a><span>›</span><span>Editar noticia</span></nav>
+
+            <div class="admin-heading-row">
+                <header class="page-heading">
+                    <span class="page-kicker"></span>
+                    <h1>✎ Editar noticia</h1>
+                    <p>Actualiza la información de la noticia seleccionada.</p>
+                </header>
+                <a href="pages/admin-noticias.html" class="page-secondary-button">‹ Volver a la lista</a>
+            </div>
+
+            <form id="admin-news-form" class="admin-form-card" data-mode="edit">
+                <div class="admin-form-layout">
+                    <section class="admin-form-main">
+                        <h2>Información de la noticia</h2>
+                        <div class="admin-form-grid">
+                            <div class="admin-field is-wide"><label for="admin-news-title">Título de la noticia *</label><input id="admin-news-title" class="admin-control" type="text"></div>
+                            <div class="admin-field"><label for="admin-news-category">Categoría *</label><select id="admin-news-category" class="admin-control"><option>Educación</option><option>Tecnología</option><option>Turismo</option><option>Comercio</option></select></div>
+                            <div class="admin-field"><label for="admin-news-date">Fecha de publicación *</label><input id="admin-news-date" class="admin-control" type="date"></div>
+                            <div class="admin-field"><label for="admin-news-status">Estado *</label><select id="admin-news-status" class="admin-control"><option value="publicada">Publicada</option><option value="borrador">Borrador</option></select></div>
+                            <div class="admin-field is-wide"><label for="admin-news-summary">Resumen *</label><textarea id="admin-news-summary" class="admin-control admin-summary"></textarea></div>
+                            <div class="admin-field is-wide"><label for="admin-news-content">Contenido *</label><textarea id="admin-news-content" class="admin-control admin-content"></textarea></div>
+                        </div>
+                    </section>
+
+                    <aside class="admin-form-side">
+                        <h2>Imagen destacada</h2>
+                        <div class="admin-image-box"><img id="admin-image-preview" src="assets/images/home/noticia-1.png" alt="Vista previa de imagen"><div class="admin-image-upload"><input id="admin-news-image" type="file" accept="image/png,image/jpeg,image/webp"></div></div>
+                        <label class="admin-feature-toggle"><input id="admin-news-featured" type="checkbox"><span><strong>Marcar como destacada</strong><br>La noticia aparecerá en la sección destacada del Home.</span></label>
+                    </aside>
+                </div>
+
+                <div class="admin-form-actions">
+                    <button class="page-primary-button" type="submit">▣ Guardar cambios</button>
+                    <button id="btn-admin-preview" class="page-secondary-button" type="button">◉ Vista previa</button>
+                    <a class="page-secondary-button" href="pages/admin-noticias.html">Cancelar</a>
+                    <button id="admin-delete-news" class="page-secondary-button admin-danger-button" type="button" style="display:none">🗑 Eliminar noticia</button>
+                </div>
+                <div id="admin-form-message" class="admin-form-message"></div>
+            </form>
+        </div>
+    </main>
+
+    <div id="admin-preview-modal" class="admin-preview-modal">
+        <article class="admin-preview-card"><img id="admin-preview-image" src="assets/images/home/noticia-1.png" alt=""><div class="admin-preview-card__body"><h2 id="admin-preview-title">Título</h2><p id="admin-preview-summary">Resumen</p><button id="btn-close-admin-preview" class="page-primary-button" type="button">Cerrar vista previa</button></div></article>
+    </div>
+
+    <footer id="app-footer" class="site-footer"></footer>
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/models/noticia.model.js"></script>
+    <script src="assets/js/services/session.service.js"></script>
+    <script src="assets/js/services/favoritos.service.js"></script>
+    <script src="assets/js/services/noticias.service.js"></script>
+    <script src="assets/js/services/notificaciones.service.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/footer.js"></script>
+    <script src="assets/js/controllers/navbar.controller.js"></script>
+    <script src="assets/js/controllers/footer.controller.js"></script>
+    <script src="assets/js/controllers/admin.controller.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

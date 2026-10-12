@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Favoritos | Nexo Noticias</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/login-modal.css">
+    <link rel="stylesheet" href="assets/css/components/register-modal.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/pages/site-pages.css">
+</head>
+<body data-page="favoritos">
+    <header id="app-header"></header>
+
+    <main id="favorites-page" class="page-shell">
+        <div class="page-container">
+            <nav class="page-breadcrumb" aria-label="Ruta de navegación">
+                <a href="index.html">Inicio</a><span>›</span><span>Favoritos</span>
+            </nav>
+
+            <div class="favorites-header-row">
+                <header class="page-heading">
+                    <span class="page-kicker"></span>
+                    <h1>Tus noticias favoritas</h1>
+                    <p>Aquí puedes consultar las noticias que has guardado para leer después.</p>
+                    <div id="favorites-count" class="favorites-count">0 noticias guardadas</div>
+                </header>
+            </div>
+
+            <section id="favorites-grid" class="favorites-grid" aria-live="polite"></section>
+
+            <div class="favorites-explore">
+                <a class="page-primary-button" href="pages/noticias.html">↻ Explorar más noticias</a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="app-footer" class="site-footer"></footer>
+
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/models/noticia.model.js"></script>
+    <script src="assets/js/services/session.service.js"></script>
+    <script src="assets/js/services/noticias.service.js"></script>
+    <script src="assets/js/services/favoritos.service.js"></script>
+    <script src="assets/js/services/notificaciones.service.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/login-modal.js"></script>
+    <script src="assets/js/components/register-modal.js"></script>
+    <script src="assets/js/components/footer.js"></script>
+    <script src="assets/js/controllers/navbar.controller.js"></script>
+    <script src="assets/js/controllers/login.controller.js"></script>
+    <script src="assets/js/controllers/register.controller.js"></script>
+    <script src="assets/js/controllers/footer.controller.js"></script>
+    <script src="assets/js/controllers/favoritos.controller.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

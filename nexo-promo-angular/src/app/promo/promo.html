@@ -1,0 +1,68 @@
+<section
+    *ngIf="visible"
+    class="promo"
+>
+
+    <!-- Cerrar promoción -->
+    <button
+        type="button"
+        class="promo__close"
+        (click)="cerrarPromocion()"
+        aria-label="Cerrar publicidad"
+    >
+        ×
+    </button>
+
+
+    <!-- Imagen -->
+    <div class="promo__image-container">
+
+        <img
+            class="promo__image"
+            [src]="imagen"
+            [alt]="titulo"
+        >
+
+    </div>
+
+
+    <!-- Contenido -->
+    <div class="promo__content">
+
+        <span class="promo__label">
+            Contenido patrocinado
+        </span>
+
+
+        <h2 class="promo__title">
+            {{ titulo }}
+        </h2>
+
+
+        <p class="promo__description">
+            {{ descripcion }}
+        </p>
+
+
+        <button
+            type="button"
+            class="promo__button"
+            (click)="mostrarInformacion()"
+        >
+            {{ botonTexto }}
+            <span aria-hidden="true">
+                →
+            </span>
+        </button>
+
+
+        <p
+            *ngIf="mensaje"
+            class="promo__message"
+        >
+            {{ mensaje }}
+        </p>
+
+    </div>
+
+</section>

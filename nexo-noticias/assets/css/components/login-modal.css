@@ -1,0 +1,583 @@
+/*
+==================================================
+NEXO NOTICIAS
+Archivo: login-modal.css
+==================================================
+
+Formulario flotante de inicio de sesión.
+
+Este diseño reproduce la identidad visual
+definida en los mockups de Nexo Noticias.
+==================================================
+*/
+
+
+/*
+El botón de inicio de sesión funciona como
+punto de referencia para ubicar el formulario.
+*/
+.navbar__account {
+    position: relative;
+}
+
+
+/*
+==================================================
+VENTANA PRINCIPAL
+==================================================
+*/
+
+.login-modal {
+
+    /*
+    Inicialmente permanece oculta.
+    jQuery controla cuándo mostrarla.
+    */
+    display: none;
+
+    position: absolute;
+
+    /*
+    Aparece debajo del botón Iniciar sesión.
+    */
+    top: calc(100% + 20px);
+
+    right: 0;
+
+    /*
+    El mockup utiliza una ventana bastante más
+    ancha que la versión anterior.
+    */
+    width: min(
+        555px,
+        calc(100vw - 32px)
+    );
+
+    padding:
+        46px
+        42px
+        38px;
+
+    /*
+    Azul principal tomado como referencia
+    visual del mockup.
+    */
+    background:
+        linear-gradient(
+            180deg,
+            #06385d 0%,
+            #012e4e 100%
+        );
+
+    border-radius: 16px;
+
+    /*
+    Borde azul muy suave.
+    */
+    border:
+        2px solid
+        rgba(42, 120, 159, 0.45);
+
+    /*
+    Sombra exterior similar al mockup.
+    */
+    box-shadow:
+        0 16px 38px
+        rgba(0, 35, 58, 0.28);
+
+    z-index: 1500;
+}
+
+
+/*
+==================================================
+MUESQUITA SUPERIOR
+==================================================
+
+Conecta visualmente el formulario
+con el botón Iniciar sesión.
+*/
+
+.login-modal::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -13px;
+
+    right: 83px;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        13px solid transparent;
+
+    border-right:
+        13px solid transparent;
+
+    border-bottom:
+        13px solid #06385d;
+}
+
+
+/*
+==================================================
+BOTÓN CERRAR
+==================================================
+*/
+
+.login-modal__close {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    /*
+    Color gris azulado del mockup.
+    */
+    color: #8da8b8;
+
+    font-size: 2.7rem;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.login-modal__close:hover {
+
+    color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+
+/*
+==================================================
+ENCABEZADO
+==================================================
+*/
+
+.login-modal__header {
+
+    margin-bottom: 24px;
+}
+
+
+.login-modal__title {
+
+    margin: 0 0 8px 0;
+
+    color: #ffffff;
+
+    font-size: 2.15rem;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+.login-modal__subtitle {
+
+    margin: 0;
+
+    color: #dbe7ee;
+
+    font-size: 1.13rem;
+
+    line-height: 1.45;
+}
+
+
+/*
+==================================================
+FORMULARIO
+==================================================
+*/
+
+.login-modal__form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 19px;
+}
+
+
+/*
+==================================================
+CONTENEDOR DE LOS INPUT
+==================================================
+*/
+
+.login-modal__input-container {
+
+    width: 100%;
+
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    /*
+    Fondo ligeramente diferente al panel.
+    */
+    background-color:
+        rgba(8, 58, 91, 0.92);
+
+    /*
+    Borde azul claro como el del mockup.
+    */
+    border:
+        1.5px solid
+        rgba(48, 135, 177, 0.75);
+
+    border-radius: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/*
+Cuando el usuario entra al campo.
+*/
+.login-modal__input-container:focus-within {
+
+    border-color: #19d5dc;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(25, 213, 220, 0.12);
+}
+
+
+/*
+==================================================
+ICONOS DE LOS INPUT
+==================================================
+*/
+
+.login-modal__input-icon {
+
+    width: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.login-modal__input-icon svg {
+
+    width: 29px;
+
+    height: 29px;
+
+    /*
+    Icono blanco como el mockup.
+    */
+    fill: #ffffff;
+}
+
+
+/*
+==================================================
+INPUT
+==================================================
+*/
+
+.login-modal__input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+        18px
+        10px
+        18px
+        0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 1.12rem;
+}
+
+
+/*
+Texto provisional del campo.
+*/
+.login-modal__input::placeholder {
+
+    color: #d4e1e8;
+
+    opacity: 1;
+}
+
+
+/*
+==================================================
+BOTÓN OJO
+==================================================
+*/
+
+
+
+.login-modal__show-password {
+    width: 58px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #e7f0f4;
+
+    cursor: pointer;
+}
+
+.login-modal__eye-icon {
+    width: 30px;
+    height: 30px;
+
+    display: block;
+
+    color: #e7f0f4;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.login-modal__show-password:hover .login-modal__eye-icon {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+/*
+==================================================
+MENSAJE DE VALIDACIÓN
+==================================================
+*/
+
+.login-modal__message {
+
+    display: none;
+
+    margin:
+        -7px
+        0
+        -5px;
+
+    padding: 0 5px;
+
+    color: #ffb8b8;
+
+    font-size: 0.93rem;
+}
+
+
+/*
+==================================================
+BOTÓN INGRESAR
+==================================================
+*/
+
+.login-modal__submit {
+
+    width: 100%;
+
+    min-height: 62px;
+
+    margin-top: 2px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    /*
+    Turquesa de Nexo Noticias.
+    */
+    background:
+        linear-gradient(
+            90deg,
+            #13ccd1 0%,
+            #00c7ca 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 1.28rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.login-modal__submit:hover {
+
+    transform:
+        translateY(-1px);
+
+    filter:
+        brightness(1.05);
+}
+
+
+/*
+==================================================
+REGISTRO
+==================================================
+*/
+
+.login-modal__register {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+}
+
+
+.login-modal__register-link {
+
+    margin-left: 5px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #00d5d9;
+
+    font-size: inherit;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+
+    cursor: pointer;
+}
+
+
+.login-modal__register-link:hover {
+
+    color: #43eef0;
+}
+
+
+/*
+==================================================
+RESPONSIVE
+==================================================
+*/
+
+@media (max-width: 700px) {
+
+    .login-modal {
+
+        right: 50%;
+
+        transform:
+            translateX(50%);
+
+        width:
+            calc(100vw - 30px);
+
+        padding:
+            40px
+            28px
+            32px;
+    }
+
+
+    .login-modal__title {
+
+        font-size: 1.75rem;
+    }
+
+
+    .login-modal__subtitle {
+
+        font-size: 1rem;
+    }
+
+
+    .login-modal__input-container {
+
+        min-height: 58px;
+    }
+
+
+    .login-modal__input {
+
+        font-size: 1rem;
+    }
+
+
+    .login-modal__submit {
+
+        min-height: 56px;
+
+        font-size: 1.13rem;
+    }
+
+
+    .login-modal::before {
+
+        right: 72px;
+    }
+
+}
